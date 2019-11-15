@@ -1,4 +1,2 @@
 # CI
-cc
-cc
-kkkkk
+cckkkk
