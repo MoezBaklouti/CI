@@ -60,11 +60,17 @@ pipeline {
                 script {
                     // If you are using Windows then you should use "bat" step
                     // Since unit testing is out of the scope we skip them
-                    bat "D:\\apache-maven-3.6.2\\bin\\mvn deploy"
+                    bat "C:\\CI\\apache-maven-3.6.2\\bin\\mvn deploy"
                 }
             }
         }
+        stage("mail") {
+          steps {
+          mail bcc: '', body: '''Hello User the build of your project successed.
+            Jenkins.''', cc: '', from: '', replyTo: '', subject: 'Build succed', to: 'chebbi.hessine@gmail.com'
+         }
         
+        }
         
         
        
